@@ -1,0 +1,77 @@
+nav.toolbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 1rem;
+    border: 2px var(--primary) solid;
+    height: 9rem;
+    width: 3rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    overflow: hidden;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .15);
+}
+
+.toolbox-item button {
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.toolbox-item button:hover {
+    color: var(--text-100);
+    background-color: var(--primary);
+}
+
+.toolbox-item svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.tier-parent {
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.plant-item {
+    background-color: var(--secondary-200);
+    padding: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.plant-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: .25rem dashed var(--accent);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.plant-avatar {
+    height: 4rem;
+    width: 4rem;
+    border: .2rem solid var(--accent);
+    color: var(--accent);
+    border-radius: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plant-avatar svg {
+    height: 2.5rem;
+    width: 2.5rem;
+}

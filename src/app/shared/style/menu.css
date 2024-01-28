@@ -1,0 +1,26 @@
+nav.menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.menu-main-btn {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    border: solid 1px var(--secondary);
+}
+
+.menu-main-btn svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.menu-main-btn:hover {
+    background-color: var(--secondary);
+    color: var(--text);
+}
