@@ -1,7 +1,12 @@
+'use client'
+
 import "../shared/style/globals.css";
 import "../shared/style/app.css";
-import { MdOutlineAdd, MdOutlineFileDownload, MdSettings } from "react-icons/md";
+import { MdEdit, MdOutlineAdd, MdOutlineFileDownload, MdSettings } from "react-icons/md";
 import { PiPlantFill } from "react-icons/pi";
+import React, { useEffect, useState } from "react";
+import { PlantTierTypes } from "../shared/types/types";
+import { TraitCard } from "../shared/components/trait";
 
 export default function App() {
     return (
@@ -13,47 +18,79 @@ export default function App() {
 }
 
 function Content() {
+
+    const [plantDetail, setPlantDetail] = useState<string | React.JSX.Element>(
+        <>
+            <TraitCard score={0} type="PLANT_TRAIT_DEFAULT" />
+        </>
+    );
+
+    function handlePlantInteraction(plant_id: PlantTierTypes) {
+        switch (plant_id) {
+            case "PLANT_TIER_PARENT_1":
+                return setPlantDetail(
+                    <>
+                        <TraitCard score={5} type="PLANT_TRAIT_GROWTH" />
+                        <TraitCard score={1} type="PLANT_TRAIT_QUALITY" />
+                        <TraitCard score={10} type="PLANT_TRAIT_RESISTANCE" />
+                        <TraitCard score={6} type="PLANT_TRAIT_TOLERANCE" />
+                        <TraitCard score={7} type="PLANT_TRAIT_YIELD" />
+                    </>
+                );
+            case "PLANT_TIER_PARENT_2":
+                return setPlantDetail(
+                    <>
+                        <TraitCard score={1} type="PLANT_TRAIT_GROWTH" />
+                        <TraitCard score={4} type="PLANT_TRAIT_QUALITY" />
+                        <TraitCard score={3} type="PLANT_TRAIT_RESISTANCE" />
+                        <TraitCard score={10} type="PLANT_TRAIT_TOLERANCE" />
+                        <TraitCard score={4} type="PLANT_TRAIT_YIELD" />
+                    </>
+                );
+            default:
+                return setPlantDetail(`[Error]: unexpected value of plant_id: ${plant_id}`);
+        }
+    }
+
     return (
         <>
             <section className="tier-parent">
-                <div className="plant-item">
-                    <div className="plant-head">
-                        <div className="plant-avatar">
-                            <PiPlantFill />
-                        </div>
-                        <div className="plant-desc">
-                            <p>Pflanze 1</p>
-                        </div>
-                    </div>
-                    <div className="plant-details">
-                        <ul>
-                            <li>Merkmal 1</li>
-                            <li>Merkmal 2</li>
-                            <li>Merkmal 3</li>
-                        </ul>
-                    </div>
+                <PlantItem plant_id={"PLANT_TIER_PARENT_1"} />
+                <div className="plant-details">
+                    {plantDetail}
                 </div>
-                <div className="plant-item">
-                    <div className="plant-head">
-                        <div className="plant-avatar">
-                            <PiPlantFill />
-                        </div>
-                        <div className="plant-desc">
-                            <p>Pflanze 2</p>
-                        </div>
-                    </div>
-                    <div className="plant-details">
-                        <ul>
-                            <li>Merkmal 1</li>
-                            <li>Merkmal 2</li>
-                            <li>Merkmal 3</li>
-                        </ul>
-                    </div>
-                </div>
+                <PlantItem plant_id={"PLANT_TIER_PARENT_2"} />
             </section>
             <section className="tier-child"></section>
         </>
     )
+
+    function PlantItem({ plant_id }: { plant_id: PlantTierTypes }) {
+        return (
+            <div className="plant-item"
+                onMouseEnter={() => {
+                    handlePlantInteraction(plant_id);
+                }}
+                onClick={() => {
+                    handlePlantInteraction(plant_id);
+                }}
+            >
+                <div className="plant-head">
+                    <div className="plant-avatar">
+                        <PiPlantFill />
+                    </div>
+                    <div className="plant-desc">
+                        <p>Pflanze</p>
+                    </div>
+                </div>
+                <div className="plant-item-ui">
+                    <button className="pi-btn">
+                        <MdEdit />
+                    </button>
+                </div>
+            </div>
+        )
+    }
 }
 
 function Toolbox() {

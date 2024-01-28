@@ -1,0 +1,50 @@
+.plant-trait-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+    background-color: var(--secondary);
+    color: var(--background);
+    display: grid;
+    grid-template-columns: 4rem 12rem;
+    grid-template-rows: 4rem auto;
+    gap: .5rem;
+    align-items: center;
+}
+
+.trait-name {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: fit-content;
+}
+
+.trait-desc {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.trait-score {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.score-ring {
+    stroke: var(--primary);
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    transition: .5s ease-in-out;
+}
+
+.score-inner-ring {
+    stroke: var(--accent);
+    stroke-width: 3;
+    fill: none;
+}
+
+.score-number {
+    stroke: var(--primary);
+    font-weight: 600;
+}
+
+.ptc-default {
+    width: 35rem;
+}

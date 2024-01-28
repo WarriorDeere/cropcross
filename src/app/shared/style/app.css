@@ -1,4 +1,8 @@
 nav.toolbox {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 9;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -7,9 +11,6 @@ nav.toolbox {
     border: 2px var(--primary) solid;
     height: 9rem;
     width: 3rem;
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
     overflow: hidden;
     box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .15);
 }
@@ -34,20 +35,45 @@ nav.toolbox {
 }
 
 .tier-parent {
-    padding: 5rem;
+    padding: 3rem 8rem;
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    width: calc(100% - 16rem);
+}
+
+.plant-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .plant-item {
-    background-color: var(--secondary-200);
-    padding: 2rem;
-    border-radius: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    cursor: pointer;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    position: relative;
+    transition: border .25s ease-in-out;
+    border: .2rem dashed transparent;
+}
+
+.tier-parent .plant-item:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tier-parent .plant-item:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.plant-item:hover {
+    border: .2rem dashed var(--accent);
 }
 
 .plant-head {
@@ -55,9 +81,7 @@ nav.toolbox {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: .25rem dashed var(--accent);
-    border-radius: 1rem;
-    padding: 2rem;
+    gap: 1rem;
 }
 
 .plant-avatar {
