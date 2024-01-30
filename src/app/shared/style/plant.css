@@ -1,0 +1,12 @@
+.plant-edit-menu {
+    border: .2rem solid var(--primary);
+    border-radius: .75rem;
+    background-color: var(--background);
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .25);
+}
+
+.plant-opt-header{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
