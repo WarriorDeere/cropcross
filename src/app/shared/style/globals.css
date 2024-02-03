@@ -1,5 +1,5 @@
 /* https://www.realtimecolors.com/?colors=130909-faf4f4-b46163-ceb498-bea977&fonts=Contrail%20One-Nunito */
-@import url('https://fonts.googleapis.com/css?family=Contrail%20One:400|Nunito:400');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap');
 
 :root {
   --text: #130909;
@@ -91,7 +91,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Contrail One', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -149,9 +149,10 @@ main {
   width: 100%;
 }
 
+menu,
 a,
 button {
   all: unset;
   cursor: pointer;
-  transition: background-color .25s ease-in-out, color .25s ease-in-out, box-shadow .25s ease-in-out;
+  transition: background-color .25s ease-in-out, color .25s ease-in-out, box-shadow .25s ease-in-out, border .25s ease-in-out;
 }

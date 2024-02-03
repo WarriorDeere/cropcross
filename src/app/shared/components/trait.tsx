@@ -11,7 +11,7 @@ export function TraitCard({ type, score }: { type: TraitCardTypes, score: number
             return (
                 <div className="plant-trait-card ptc-default">
                     <div className="trait-name">
-                        <h3>Pflanzenmerkmal</h3>
+                        <h4>Pflanzenmerkmal</h4>
                     </div>
                     <div className="trait-desc">
                         <p>Verschiedene Pflanzenmerkmale, welche u.a. Ertrag, Krankheitsresitenz und Nährstoffgehalte beeinflussen.</p>
@@ -24,7 +24,7 @@ export function TraitCard({ type, score }: { type: TraitCardTypes, score: number
             return (
                 <div className="plant-trait-card">
                     <div className="trait-name">
-                        <h3>Ertrag</h3>
+                        <h4>Ertrag</h4>
                     </div>
                     <div className="trait-desc">
                         <p>Der Ertrag pro Pflanze bzw. Hektar.</p>
@@ -37,7 +37,7 @@ export function TraitCard({ type, score }: { type: TraitCardTypes, score: number
             return (
                 <div className="plant-trait-card">
                     <div className="trait-name">
-                        <h3>Resistenz</h3>
+                        <h4>Resistenz</h4>
                     </div>
                     <div className="trait-desc">
                         <p>Widerstandsfähigkeit gegen Krankheiten und Schädlinge.</p>
@@ -50,7 +50,7 @@ export function TraitCard({ type, score }: { type: TraitCardTypes, score: number
             return (
                 <div className="plant-trait-card">
                     <div className="trait-name">
-                        <h3>Qualität</h3>
+                        <h4>Qualität</h4>
                     </div>
                     <div className="trait-desc">
                         <p>Bestimmt Geschmack, Textur, Farbe und Nährstoffgehalt der Kulturpflanze.</p>
@@ -63,7 +63,7 @@ export function TraitCard({ type, score }: { type: TraitCardTypes, score: number
             return (
                 <div className="plant-trait-card">
                     <div className="trait-name">
-                        <h3>Wachstum</h3>
+                        <h4>Wachstum</h4>
                     </div>
                     <div className="trait-desc">
                         <p>Beeinflusst das Wachstum abhängig vom Standort.</p>
@@ -76,10 +76,23 @@ export function TraitCard({ type, score }: { type: TraitCardTypes, score: number
             return (
                 <div className="plant-trait-card">
                     <div className="trait-name">
-                        <h3>Toleranz</h3>
+                        <h4>Toleranz</h4>
                     </div>
                     <div className="trait-desc">
                         <p>Wiederstandsfähigkeit der Pflanze gegenüber negativer abiotischer Faktoren.</p>
+                    </div>
+                    <TraitScore score={score} />
+                </div>
+            )
+
+        case "PLANT_TRAIT_SUMMARY":
+            return (
+                <div className="plant-trait-card">
+                    <div className="trait-name">
+                        <h4>Gesamtscore</h4>
+                    </div>
+                    <div className="trait-desc">
+                        <p>Gesamtscore der Pflanze. Von 0 (Schlecht) bis 10 (Beste).</p>
                     </div>
                     <TraitScore score={score} />
                 </div>

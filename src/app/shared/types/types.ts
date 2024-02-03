@@ -12,7 +12,8 @@ export type TraitCardTypes =
     "PLANT_TRAIT_RESISTANCE" |
     "PLANT_TRAIT_QUALITY" |
     "PLANT_TRAIT_GROWTH" |
-    "PLANT_TRAIT_TOLERANCE"
+    "PLANT_TRAIT_TOLERANCE" | 
+    "PLANT_TRAIT_SUMMARY"
 
 export interface PlantObject {
     "plant_trait": {

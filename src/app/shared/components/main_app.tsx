@@ -25,21 +25,13 @@ export function Content() {
             case "PLANT_TIER_PARENT_1":
                 return setPlantDetail(
                     <>
-                        <TraitCard score={5} type="PLANT_TRAIT_GROWTH" />
-                        <TraitCard score={1} type="PLANT_TRAIT_QUALITY" />
-                        <TraitCard score={10} type="PLANT_TRAIT_RESISTANCE" />
-                        <TraitCard score={6} type="PLANT_TRAIT_TOLERANCE" />
-                        <TraitCard score={7} type="PLANT_TRAIT_YIELD" />
+                        <TraitCard score={4} type="PLANT_TRAIT_SUMMARY" />
                     </>
                 );
             case "PLANT_TIER_PARENT_2":
                 return setPlantDetail(
                     <>
-                        <TraitCard score={1} type="PLANT_TRAIT_GROWTH" />
-                        <TraitCard score={4} type="PLANT_TRAIT_QUALITY" />
-                        <TraitCard score={3} type="PLANT_TRAIT_RESISTANCE" />
-                        <TraitCard score={10} type="PLANT_TRAIT_TOLERANCE" />
-                        <TraitCard score={4} type="PLANT_TRAIT_YIELD" />
+                        <TraitCard score={8} type="PLANT_TRAIT_SUMMARY" />
                     </>
                 );
             default:
@@ -52,13 +44,13 @@ export function Content() {
             <section className="tier-parent">
                 <div className="parent-container">
                     <PlantItem plant_id={"PLANT_TIER_PARENT_1"} />
+                    {plantDetail}
                     <PlantItem plant_id={"PLANT_TIER_PARENT_2"} />
                 </div>
-                <div className="plant-details">
-                    {plantDetail}
-                </div>
             </section>
-            <section className="tier-child"></section>
+            <section className="tier-child">
+                child-score: 
+            </section>
         </>
     )
 
