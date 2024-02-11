@@ -3,9 +3,9 @@
 import "../style/globals.css";
 import "../style/trait.css";
 import { useState, useEffect } from "react"
-import { TraitCardTypes } from "../types/types"
+import { SmallTraitCardTypes, TraitTypes } from "../types/types"
 
-export function TraitCard({ type, score }: { type: TraitCardTypes, score: number }) {
+export function TraitCard({ type, score }: { type: TraitTypes, score: number }) {
     switch (type) {
         case "PLANT_TRAIT_DEFAULT":
             return (
@@ -130,4 +130,38 @@ export function TraitScore({ score }: { score: number }) {
             <text className="score-number" x="50%" y="50%" dominantBaseline="middle" textAnchor="middle">{score}</text>
         </svg>
     )
+}
+
+export function SmallTraitCard({ type, score }: { type: SmallTraitCardTypes, score: number }) {
+
+    function card_type(): String {
+        switch (type) {
+            case "PLANT_TRAIT_YIELD":
+                return "Ertrag";
+
+            case "PLANT_TRAIT_RESISTANCE":
+                return "Resistenz";
+
+            case "PLANT_TRAIT_QUALITY":
+                return "Qualität";
+
+            case "PLANT_TRAIT_GROWTH":
+                return "Wachstum";
+
+            case "PLANT_TRAIT_TOLERANCE":
+                return "Toleranz";
+
+            default:
+                return "";
+        }
+    }
+
+    return (
+        <div className="plant-trait-card smptc">
+            <TraitScore score={score} />
+            <div className="trait-name">
+                <h4>{card_type()}</h4>
+            </div>
+        </div>
+    );
 }

@@ -1,4 +1,4 @@
-import { PlantObject } from "../types/types";
+import { PlantObject, TraitTypes } from "../types/types";
 
 export class plantInstance {
 

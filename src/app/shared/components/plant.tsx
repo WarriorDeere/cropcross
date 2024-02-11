@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { PiPlantFill } from "react-icons/pi";
 import { MdEdit } from "react-icons/md";
 import { BsQuestionCircle } from "react-icons/bs";
+import { SmallTraitCard, TraitCard } from "./trait";
 
 export default function Plantmenu({ item_id }: { item_id: string }) {
 
@@ -69,26 +70,11 @@ export default function Plantmenu({ item_id }: { item_id: string }) {
             </div>
             <div className="plant-opt-menu">
                 <div className="trait-opt-container">
-                    <div className="trait-opt-item">
-                        <BsQuestionCircle />
-                        <p>Merkmal XYZ</p>
-                    </div>
-                    <div className="trait-opt-item">
-                        <BsQuestionCircle />
-                        <p>Merkmal XYZ</p>
-                    </div>
-                    <div className="trait-opt-item">
-                        <BsQuestionCircle />
-                        <p>Merkmal XYZ</p>
-                    </div>
-                    <div className="trait-opt-item">
-                        <BsQuestionCircle />
-                        <p>Merkmal XYZ</p>
-                    </div>
-                    <div className="trait-opt-item">
-                        <BsQuestionCircle />
-                        <p>Merkmal XYZ</p>
-                    </div>
+                    <SmallTraitCard type={"PLANT_TRAIT_YIELD"} score={5} />
+                    <SmallTraitCard type={"PLANT_TRAIT_RESISTANCE"} score={4} />
+                    <SmallTraitCard type={"PLANT_TRAIT_QUALITY"} score={9} />
+                    <SmallTraitCard type={"PLANT_TRAIT_GROWTH"} score={10} />
+                    <SmallTraitCard type={"PLANT_TRAIT_TOLERANCE"} score={7} />
                 </div>
             </div>
         </dialog>
